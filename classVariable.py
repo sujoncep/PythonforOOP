@@ -1,14 +1,15 @@
 class Circle:
-    def __init__(self, radious, pi):
+    pi = 3.1416
+
+    def __init__(self, radious):
         self.radious = radious
-        self.pi = pi
 
     def circumference(self):
-        circumference = 2*self.pi*self.radious
+        circumference = 2*Circle.pi*self.radious
         return circumference
 
     def area(self):
-        area = self.pi*self.radious*self.radious
+        area = Circle.pi*self.radious*self.radious
         return area
 
     def display(self):
@@ -16,6 +17,6 @@ class Circle:
         print("The circumference of the circle is ", self.circumference())
 
 
-circle1 = Circle(34, 3.1416)
-circle2 = Circle(20, 3.1416)
+circle1 = Circle(34)
+circle2 = Circle(20)
 print(circle1.display())
