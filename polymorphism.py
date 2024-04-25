@@ -12,11 +12,8 @@ class Phone:
     def fullName(self):
         print(f"This is {self.brand} {self.model} and this is a phone")
 
-
-# phone = Phone('nokia', '1100', 5000)
-
-# phone.makeACall(2441139)
-# phone.fullName()
+    def __add__(self, other):
+        return f"phone1 model is {self.model}" + f" phone2 model is {other.model}"
 
 
 class SmartPhone(Phone):
@@ -30,11 +27,8 @@ class SmartPhone(Phone):
     def fullName(self):
         print(f"This is {self.brand} {self.model} and this is a smartphone")
 
-
-# smartphone = SmartPhone('nokia', '1100', 5000, '8gb', '128gb', '20mp')
-
-# smartphone.makeACall(2441139)
-# smartphone.fullName()
+    def __add__(self, other):
+        return f"smartphone1 ram is {self.ram}" + f" smartphone2 ram is {other.ram}"
 
 
 class IPhone(SmartPhone):
@@ -45,21 +39,19 @@ class IPhone(SmartPhone):
     def fullName(self):
         print(f"This is {self.brand} {self.model} and this is a Iphone")
 
-
-iphone = IPhone('nokia', '1100', 5000, '8gb', '128gb', '20mp', '8mp')
-smartphone = SmartPhone('nokia', '1100', 5000, '8gb', '128gb', '20mp')
-phone = Phone('nokia', '1100', 5000)
-
-# iphone.fullName()
-# smartphone.fullName()
-# phone.fullName()
-
-print(isinstance(phone, IPhone))
+    def __add__(self, other):
+        return f"iphone1 fornt camera is {self.forntCamera}" + f" iphone2 fornt camera is {other.forntCamera}"
 
 
-# in python everything is pulic
+iphone1 = IPhone('iphone', '12pm', 5000, '8gb', '128gb', '20mp', '8mp')
+iphone2 = IPhone('iphone', '13pm', 7000, '12gb', '256gb', '20mp', '8mp')
 
-# Naming convention
-# Dunder methods are used to define behaviors for various built-in operations and functionalities, such as object initialization, comparison, arithmetic operations, attribute access, and more. These methods allow you to customize the behavior of your objects and classes, making them more powerful and flexible.
+smartphone1 = SmartPhone('nokia', '1120', 4000, '6gb', '228gb', '10mp')
+smartphone2 = SmartPhone('nokia', '1100', 5000, '8gb', '128gb', '20mp')
 
-# __init__: This method is called when an object is created. It is used to initialize the object's attributes.
+phone1 = Phone('nokia', '1100', 5000)
+phone2 = Phone('nokia', '1130', 7000)
+
+print(phone1+phone2)
+print(iphone1+iphone2)
+print(smartphone1+smartphone2)
